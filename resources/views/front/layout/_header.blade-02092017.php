@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="FilmUnit" />
+    <meta property="og:type" content="FilmUnit" />
+    <meta property="og:url" content="http://www.webwingtechnologies.com/" />
+    <meta property="og:image" content="{{url('/')}}/images/top-bg.jpg" />
+    <meta property="og:description" content="FilmUnit" />
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <title>{{$title}}</title>
+    <!-- ======================================================================== -->
+    <link rel="icon" href="{{url('/')}}/images/favicon-16x16.png" type="image/x-icon" />
+    <!-- Bootstrap Core CSS -->
+    <link href="{{url('/')}}/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <!--font-awesome-css-start-here-->
+    <link href="{{url('/')}}/css/admin/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{url('/')}}/css/admin/filmunit.css" rel="stylesheet" type="text/css" />
+    <link href="{{url('/')}}/css/admin/set1.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" language="javascript" src="{{url('/')}}/js/front/jquery-1.11.3.min.js"></script>
+       <!--Right Bar Sticky Float-->
+    <!--      Flexslider JS-->
+    <script type="text/javascript" src="{{url('/')}}/js/front/jquery.flexisel.js"></script>
+
+    <script type="text/javascript">
+        $(window).load(function() {
+            $("#flexiselDemo1").flexisel();
+            $("#flexiselDemo2").flexisel({
+                enableResponsiveBreakpoints: true,
+                responsiveBreakpoints: {
+                    portrait: {
+                        changePoint: 480,
+                        visibleItems: 1
+                    },
+                    landscape: {
+                        changePoint: 640,
+                        visibleItems: 2
+                    },
+                    tablet: {
+                        changePoint: 768,
+                        visibleItems: 3
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="main"></div>
+
+<?php 
+
+  if(isset($user) && $user!="")
+  
+  $user_id = "";
+  $path    = "";
+  $role    = "";
+  $profile_img = "";
+  $user = Sentinel::check();
+  {
+    $user_id = $user['id'];
+    $path    = url('/')."/get_notification_count";
+    $role    = $user['role'];
+    $profile_img = isset($user['profile_image'])  ? $user['profile_image'] : "";    
+  }
+
+?>
+    <div id="header-home">
+    <input type="hidden" value="{{ csrf_token() }}" name="token" id="token">
+        @if($user==false || $role=='admin')
+        <!--<div class="main-banner-block">-->
+        <div class="header header-home header-set" style="background-color:black;">
+            <div class="logo-block wow fadeInDown" data-wow-delay="0.2s">
+                <a href="{{url('/')}}">
+                    <img src="{{url('/')}}/images/logo-home.png" alt="" class="main-logo" />
+                </a>
+            </div>
+            
+            <form method="get" action="{{url('/')}}/listing">
+                <div class="search-box-home hidden-xs hidden-sm">
+                    <div class="select-box padd-0-catego">
+                        <div class="select-style">
+                            <select tabindex="1" name="type" class="frm-select">
+                                   <option value="footage" @if(\Request::get('type')=='footage') selected @endif>Footage</option>
+                                   <option value="photo" @if(\Request::get('type')=='photo') selected @endif>Photo</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div class="input-box padd-0">
+                        <input class="trans-input-search" name="keyword" placeholder="Search photos, footages" type="text" value="{{\Request::get('keyword')}}" />
+                    </div>
+                    <button type="submit" class="button-pos-serch"><img class="search-img-icns" src="{{url('/')}}/images/search-icon-top.png" alt="" /></button>
+
+                    <div class="clr"></div>
+                </div>
+            </form>
+            
+            <form method="get" action="{{url('/')}}/listing">
+                <div class="hidden-md hidden-lg search-box-header">
+                    <div id="flipdashboard"><i class="fa fa-search" aria-hidden="true"></i></div>
+                    <div id="paneldashboard">
+                        <div class="search-box-home">
+                            <div class="col-xs-5 col-sm-4 col-md-4 col-lg-4 padd-0-catego">
+                                <div class="select-style">
+                                    <select tabindex="1" name="type" class="frm-select">
+                                       <option value="footage" @if(\Request::get('type')=='footage') selected @endif>Footage</option>
+                                       <option value="photo" @if(\Request::get('type')=='photo') selected @endif>Photo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-7 col-sm-8 col-md-8 col-lg-8 padd-0">
+                                <input class="trans-input-search" name="keyword" placeholder="Search photos, footages" type="text" value="{{\Request::get('keyword')}}"/>
+                                <!--<div class="error-msg">Please enter valid Fields.</div>-->
+                            </div>
+                            <button type="submit" class="button-pos-serch"><img class="search-img-icns" src="{{url('/')}}/images/search-icon-top.png" alt="" /></button>
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <span class="menu-icon" onclick="openNav()">&#9776;</span>
+            <!--Menu Start-->
+            <div id="mySidenav" class="sidenav">
+                <div class="signup-sectino">
+                    <ul>
+                        <li class="display-bck blcoks"><a href="{{url('/')}}/login">Sign In</a></li>
+                        <li>
+                            <a href="javascript:void(0)"> <span><img src="{{url('/')}}/images/cart-icons.png" class="img-cart" alt="" /></span> 02</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="banner-img-block">
+                    <img src="{{url('/')}}/images/photoshoot-logo-responsive.png" alt="Logo" />
+                    <div class="img-responsive-logo"></div>
+                </div>
+                <ul class="min-menu">
+                    <li class="first-cls"><a href="javascript:void(0)" class="">Footage</a></li>
+                    <li><a href="javascript:void(0)" class="drop-block">Photo</a></li>
+                    <li><a href="{{url('/')}}/about" class="drop-block">About Us</a></li>
+                    <!--            <li><a href="contact.html" class="drop-block">Contact Us</a></li>-->
+                    <li class="btn-become btn-homebecome display-bck "><a href="{{url('/')}}/signup" class="drop-block">Join Now</a></li>
+                    <li class="display-bck-c "><a href="{{url('/')}}/signup" class="drop-block">Join Now</a></li>
+
+                    <li class="display-bck-c"><a href="{{url('/')}}/login">Sign In</a></li>
+
+                </ul>
+                <div class="clr"></div>
+            </div>
+            <div class="clr"></div>
+        </div>
+        <div class="bank-div"></div>
+        <div class="clr"></div>
+        <!--</div>-->
+        @endif
+
+
+        @if($user==true && $role!='admin')
+        <!--After Header-->
+        <div class="header header-home">
+            <div class="logo-block wow fadeInDown" data-wow-delay="0.2s">
+                <a href="{{url('/')}}">
+                    <img src="{{url('/')}}/images/logo-home.png" alt="" class="main-logo after-heads" />
+                </a>
+            </div>
+
+            <div class="sond">
+                <div class="signup-sectino none-diplay">
+                    <a href="javascript:void(0)"> <span><img src="{{url('/')}}/images/cart-icons.png" class="img-cart" alt="" /></span> 02</a>
+                </div>
+                <div class="signup-sectino none-diplay">
+                    <a href="{{url('/')}}/notifications"> <span><i class="fa fa-bell"></i></span> <span class="countss" id='notification_div1'>0</span></a>
+                </div>
+                <div class="signup-sectino none-diplay">
+                    <a href="#"> <span><i class="fa fa-heart"></i></span> <span class="countss" id=''>0</span></a>
+                </div>
+            </div>
+            <span class="menu-icon" onclick="openNav()">&#9776;</span>
+            <!--Menu Start-->
+            <div id="mySidenav" class="sidenav after-clns">
+
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="banner-img-block">
+                    <img src="{{url('/')}}/images/photoshoot-logo-responsive.png" alt="Logo" />
+                    <div class="img-responsive-logo"></div>
+                </div>
+
+                <ul class="min-menu">
+                    {{-- <li class="first-cls"><a href="javascript:void(0)" class="">Footage</a></li>
+                    <li><a href="javascript:void(0)" class="drop-block">Photo</a></li> --}}
+                    <li class="cartbtnss">
+                        <a href="javascript:void(0)"> <span><i class="fa fa-shopping-cart"></i></span><span class="countss">02</span></a>
+                    </li>
+                    <li class="cartbtnss">
+                        <a href="{{url('/')}}/notifications"> <span><i class="fa fa-bell"></i></span> <span class="countss" id='notification_div2'>0</span></a>
+                    </li>
+                    <li class="cartbtnss">
+                        <a href="#"> <span><i class="fa fa-heart"></i></span> <span class="countss" id=''>0</span></a>
+                    </li>
+                    <li>
+                        <a href="{{url('/')}}/account" class="">
+                            @if($user['role']=='seller')        
+                            <span class="profile-pic-block">
+                            @if($profile_img!='')
+                            <img src="{{ get_resized_image($profile_img,config('app.project.img_path.user_profile_images'),137,137) }}" class="img-cart" alt="" />
+                            @else
+                            <img src="{{url('/').config('app.project.img_path.user_profile_images')}}user-male.png" class="img-cart" alt="" />
+                            @endif
+                            </span>
+                            @endif
+                            {{$user['first_name']}} {{$user['last_name']}}
+                        </a>
+                    </li>
+                </ul>
+                <div class="clr"></div>
+            </div>
+            <div class="clr"></div>
+        </div>
+        <div class="bank-div afterhedr"></div>
+        <div class="clr"></div>
+        <!--</div>-->
+        @endif
+
+    </div>
+
+    <!-- end header -->
+
+<script type="text/javascript">
+
+var Site_URL = "{{ $path }}";
+var to_user_id = '{{$user_id}}';
+
+$(document).ready(function()
+{
+    setInterval(function()
+    {   
+        var token = $('#token').val();
+        if(token != '')
+        {    
+            $.ajax(
+            {
+                'url':Site_URL,                    
+                'type':'post',
+                'data':{'to_user_id':to_user_id,'_token':token},
+                success:function(res)   
+                {
+                    if($.trim(res)!='')
+                    {
+                        $('#notification_div1').html(res);
+                        $('#notification_div2').html(res);
+                    }
+                }
+
+            });
+        }
+    },5000);
+});   
+
+</script>    

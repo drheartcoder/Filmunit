@@ -1,0 +1,7 @@
+[29-Sep-2017 13:52:58 UTC] [ Base_MixpanelBase - line 76 ] : Using token: 6fe8d87bb7308ab9accf8ac8c04ac962
+[29-Sep-2017 13:52:58 UTC] [ Base_MixpanelBase - line 173 ] : Using consumer: curl -> ConsumerStrategies_CurlConsumer
+[29-Sep-2017 13:52:58 UTC] [ Base_MixpanelBase - line 18 ] : Instantiated new Consumer
+[29-Sep-2017 13:52:58 UTC] [ Base_MixpanelBase - line 76 ] : Using token: 6fe8d87bb7308ab9accf8ac8c04ac962
+[29-Sep-2017 13:52:58 UTC] [ Base_MixpanelBase - line 173 ] : Using consumer: curl -> ConsumerStrategies_CurlConsumer
+[29-Sep-2017 13:52:58 UTC] [ Base_MixpanelBase - line 18 ] : Instantiated new Consumer
+[29-Sep-2017 13:52:58 UTC] [ Base_MixpanelBase - line 194 ] : Queued message: {"event":"Welcome Show","properties":{"mp_lib":"php","token":"6fe8d87bb7308ab9accf8ac8c04ac962","time":1506693178}}

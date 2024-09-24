@@ -1,0 +1,78 @@
+/*
+Theme Name: Finance
+Theme URI: http://corpthemes.com/wordpress/finance/
+Author: Themesflat
+Author URI: https://themeforest.net/user/themesflat/portfolio
+Description: Finance is a clean and professional site template, perfect for ,  any business and personal chef web sites. Built on the Advanced Bootstrap 3 framework with HTML5 / CSS3. Its responsive too – Will fit great on all devices. More features with 5 Homepages (Full Screen, One Page, Video One Page, Video Full Screen One Page, Full Screen One Page, Parallax, Video Parallax, Video Full Screen),  and much more gives you more space to work with and also with a few lines of code
+Version: 1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: finance
+Tags: accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+.header-styles h1.title {
+    color: #dbb339 !important;
+    text-align: center;
+}
+.title-section .title-content {
+    margin-top: 12px;
+}
+.imagebox.checking .box-header {
+    display: none;
+}
+.testimonial-theme4-theme4 {
+    background-color: #1F1E1D !important;
+}
+.testimonial-theme4-theme4 .testimonial-theme4-title-theme4 {
+    color: white !important;
+}
+.testimonial-theme4-theme4 .fa-fw {
+    text-align: center;
+    width: 1.28571em;
+    color: #1F1E1D !important;
+}
+.vc_row.wpb_row.vc_row-fluid.testing-123.vc_custom_1506495406193.vc_row-has-fill, .vc_row.wpb_row.vc_row-fluid.testing-123.vc_custom_1506495981359.vc_row-has-fill {
+    background-color: transparent !important;
+}
+.new-btn{min-height: 30px;
+    width: 200px;
+    display:inline-block;
+    padding: 10px 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #1f1e1d;
+    border-radius: 30px;
+    border: 0px;
+    margin-bottom: 10px;
+    background: -moz-linear-gradient(90deg, rgba(199, 153, 34, 1) 0%, rgba(245, 212, 69, 1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(245, 212, 69, 1)), color-stop(100%, rgba(199, 153, 34, 1)));
+    background: -webkit-linear-gradient(90deg, rgba(199, 153, 34, 1) 0%, rgba(245, 212, 69, 1) 100%);
+    background: -o-linear-gradient(90deg, rgba(199, 153, 34, 1) 0%, rgba(245, 212, 69, 1) 100%);
+    background: -ms-linear-gradient(90deg, rgba(199, 153, 34, 1) 0%, rgba(245, 212, 69, 1) 100%);
+    background: linear-gradient(0deg, rgba(199, 153, 34, 1) 0%, rgba(245, 212, 69, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f5d445', endColorstr='#c79922', GradientType=0); transition: all 0.2s ease-in-out;}
+.new-btn:hover{ background:#fff!important;  color: #000;}
+
+.testimonial-slider-main {background-color: #1F1E1D !important; padding: 20px 0!important;}
+.join-film-unit.new { background-image : none!important;}
+.join-film-unit a:hover, .join-film-unit button:hover, .join-film-unit a, .join-film-unit button {display: inline-block;padding: 12px 40px;font-size: 14px;text-transform: uppercase;font-weight: 500;color: #1f1e1d;border-radius: 30px;border: 0px;margin-bottom: 10px;margin-right: 10px;
+    background: -moz-linear-gradient(90deg, rgba(199, 153, 34, 1) 0%, rgba(245, 212, 69, 1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(245, 212, 69, 1)), color-stop(100%, rgba(199, 153, 34, 1)));
+    background: -webkit-linear-gradient(90deg, rgba(199, 153, 34, 1) 0%, rgba(245, 212, 69, 1) 100%);
+    background: -o-linear-gradient(90deg, rgba(199, 153, 34, 1) 0%, rgba(245, 212, 69, 1) 100%);
+    background: -ms-linear-gradient(90deg, rgba(199, 153, 34, 1) 0%, rgba(245, 212, 69, 1) 100%);
+    background: linear-gradient(0deg, rgba(199, 153, 34, 1) 0%, rgba(245, 212, 69, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f5d445', endColorstr='#c79922', GradientType=0);}
+    .button-section a:hover, .button-section button:hover {    background: #fff;    color: #333;}
+.reproduced-block { float: left; width: 100%; clear: both;}
+.testimonial-slider-main {
+    background-color: #1F1E1D !important;
+    padding: 20px 0 0!important;
+}
+.wpb_content_element.about-camera-img-block{margin: 50px 0 !important;}
+#main-content > .col-md-12{ padding: 0!important;}
